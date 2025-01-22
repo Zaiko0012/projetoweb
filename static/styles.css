@@ -1,0 +1,90 @@
+.header {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    font-weight: bold;
+    color: #9400D3;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1c1c1c;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #e0e0e0;
+}
+
+form {
+    background: #2b2b2b;
+    padding: 45px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    width: 350px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #9c27b0;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+    color: #b0b0b0;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #333;
+    color: #e0e0e0;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #9c27b0;
+    outline: none;
+    box-shadow: 0 0 5px rgba(156, 39, 176, 0.7);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #9c27b0;
+    color: #1c1c1c;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #7b1fa2;
+    transform: scale(1.02);
+}
+
+button:active {
+    background: #4a0072;
+    transform: scale(0.98);
+}
+
+@media (max-width: 400px) {
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+}
