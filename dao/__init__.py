@@ -4,10 +4,15 @@ def conectardb():
 
     con = psycopg2.connect(
 
-        host='localhost',
-        database = 'chuva',
-        user = 'postgres',
-        password = '12345'
+        #host='localhost',
+        #database = 'chuva',
+        #user = 'postgres',
+        #password = '12345'
+
+        host = 'dpg-cu8fvel2ng1s73ek9ur0-a.oregon-postgres.render.com',
+        database = 'comunidades',
+        user = 'comunidades_user',
+        password = '4Lcl80G8j0Q2cdExitfgdCLfivb8Kd30'
     )
     return con
 def login(user,senha):
