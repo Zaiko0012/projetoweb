@@ -4,6 +4,8 @@ from flask import *
 
 app = Flask(__name__)
 
+app.secret_key = '!@S4KUR4@!@!'
+
 @app.route('/login', methods=['POST'])
 def fazer_login():
     login = request.form.get('username')
@@ -11,10 +13,16 @@ def fazer_login():
     saida = dao.login(login, senha)
     print(saida)
     if len(saida) > 0:
+        session['login'] = login
         nome_user = saida[0][0]
         return render_template('lobby.html' ,nome=nome_user)
     else:
         return render_template('register.html')
+
+@app.route('/logout', methods=['POST', 'GET'])
+def sair():
+    session.pop('login')
+    return render_template('register.html')
 
 @app.route('/')
 def home():
@@ -55,7 +63,6 @@ def listar_usuarios():
     usuarios = dao.listar_usuarios()
     print(usuarios)
     return render_template('listadeusuarios.html', lista=usuarios)
-
 
 @app.route('/cadastrareditais', methods=['POST'])
 def cadastrar_editais():
