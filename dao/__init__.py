@@ -78,3 +78,18 @@ def inserir_edital(nomeedital,objetivo,local):
     conn.close()
     return exito
 
+def listar_editais():
+    con = conectardb()
+    cur = con.cursor()
+    sql = f"SELECT  * from edital"
+    cur.execute(sql)
+    saida = cur.fetchall()
+
+    cur.close()
+    con.close()
+
+    return saida
+
+
+
+

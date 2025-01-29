@@ -81,5 +81,13 @@ def cadastrar_editais():
 
 
 
+@app.route('/listareditais')
+def listar_editais():
+
+    editais= dao.listar_editais()
+    print(editais)
+    return render_template('listadeeditais.html', lista=editais)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista de editais</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Editais no sistema</h1>
+    </header>
+        <main>
+        <h2 class="page-title">Lista de Editais</h2>
+            <ul class="user-list">
+                {% for edital in lista %}
+                <li class="user-item">
+                    <span class="user-name">{{edital[0]}}</span>
+                    <span class="user-login">{{edital[1]}}</span>
+                    <span class="user-login">{{edital[2]}}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </main>
+    </body>
+</html>
