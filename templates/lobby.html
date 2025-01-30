@@ -1,42 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lobby</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='lob.css') }}">
+    <title>Cadastro</title>
+  <link rel="stylesheet" href="..//static//styles.css">
+<div class="container">
 </head>
 <body>
-  <div class="container">
-    <h1>Conhecendo mais</h1>
-    <hr>
+    <h1>Cadastro</h1>
+    <form action="/login" method="post">
+        <label for="username">Usuário:</label><br>
+        <input type="text" id="username" name="username" required><br>
 
-    <h1>A relevância cultural e a resiliência das comunidades quilombolas dos Sítios Coati-Lagoa do Mato e Lagoa de Pedra,
-      no município de Luís Gomes, RN</h1>
-    <p>As comunidades quilombolas são exemplos de resistência, organização social e resiliência. Desde sua formação como
-      refúgios para afrodescendentes fugidos da escravidão, enfrentaram adversidades como marginalização social
-      e discriminação racial. Sua resistência vai além da sobrevivência, incluindo a preservação e transmissão
-      de tradições culturais, apesar de pressões externas.</p>
+        <label for="password">Senha:</label><br>
+        <input type="password" id="password" name="password" required><br>
 
-    <p>A resiliência das comunidades se manifesta na adaptação às mudanças externas e na luta pelo
-      reconhecimento de direitos territoriais, essenciais para a preservação de seus modos de vida
-      e práticas culturais. Sua rica herança cultural, incluindo música, danças, culinária e práticas religiosas,
-      contribui significativamente para a diversidade e riqueza cultural local e regional.</p>
-
-    <p><strong>Objetivo</strong></p>
-
-    <p>"Resgatar, preservar e promover a socialização das histórias e culturas das comunidades quilombolas
-      de Coati e Lagoa do Mato e Lagoa de Pedra, localizados no município de Luis Gomes, Estado do Rio Grande do Norte,
-      através da criação de página eletrônica para divulgação"</p>
-    <hr>
-     <p><a href="{{ url_for('redirecionar') }}">Clique aqui para ser redirecionado para a página de Comunidades.</a></p>
-
-     <form action="/logout" method="post">
-            <button type="submit">Sair</button>
-        </form>
-        <br>
-        <a href="/logout">Sair</a>
-  </div>
-
+        <button type="submit">Cadastrar</button>
+    </form>
+<br>
+    <p>{{texto}}</p>
+    <a href="/mostrar_cadastro">Não é cadastrado? Registre-se aqui</a>
 </body>
 </html>
