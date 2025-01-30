@@ -32,10 +32,6 @@ def home():
 def lobby():
     return render_template("lobby.html")
 
-@app.route("/redirecionar")
-def redirecionar():
-    return render_template("cadastrareditais")
-
 @app.route("/cadastrareditais")
 def comunidades():
     return render_template("cadastrareditais.html")
@@ -81,12 +77,12 @@ def cadastrar_editais():
 
 
 
-@app.route('/listareditais')
+@app.route('/listareditais', methods=['POST','GET'])
 def listar_editais():
 
     editais= dao.listar_editais()
     print(editais)
-    return render_template('listadeeditais.html', lista=editais)
+    return render_template('listadeeditais.html', lista=editais,)
 
 
 if __name__ == '__main__':
